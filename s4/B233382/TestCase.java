@@ -50,6 +50,12 @@ public class TestCase {
 	    //freq = myObject.frequency();
             //assert freq == -1: "Target length is greater than the remaining length of space";
 
+	    // checking for when targetLength is 0
+	    myObject.setSpace("Hi Ho Hi Ho".getBytes());
+            myObject.setTarget("".getBytes());
+	    freq = myObject.frequency();
+            assert freq == -1: "Target Length is 0 or target is null";
+
 
 	}
 	catch(Exception e) {
