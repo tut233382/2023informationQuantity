@@ -45,14 +45,15 @@ public class Frequencer implements FrequencerInterface {
         int count = 0;
 	if(debugMode) { showVariables(); }
 
+	// check for other conditions here
 	if(targetLength == 0 || myTarget == null){
 		return -1;
 	}
-
 	if(spaceLength == 0 || mySpace == null){
 		return 0;
 	}
-	    
+
+	// count occurrences of target     
         for(int start = 0; start<spaceLength; start++) { // Is it OK?
             boolean abort = false;
             for(int i = 0; i<targetLength; i++) {
