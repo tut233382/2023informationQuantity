@@ -62,6 +62,20 @@ public class TestCase {
 	    freq = myObject.frequency();
             assert freq == 0: "Target Length is 0 or target is null";
 
+	    // test case where target is 5 characters
+	    myObject.setSpace("Hi Ho Hi Ho".getBytes());
+            myObject.setTarget("Hi Ho".getBytes());
+	    freq = myObject.frequency();
+            System.out.println("freq value: " + freq);
+            assert freq == 2: "there must be 2 occurrences of Hi Ho in Hi Ho Hi Ho";
+
+	    // test case where target is 1 character after getting subbyte
+	    myObject.setSpace("Hi Ho Hi Ho".getBytes());
+            myObject.setTarget("Hi Ho".getBytes());
+	    freq = myObject.subByteFrequency(0, 1);
+	    System.out.println("freq value: " + freq);
+            assert freq == 4: "There must be 4 occurrences of H in Hi Ho";
+
 
 	}
 	catch(Exception e) {
