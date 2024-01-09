@@ -68,9 +68,14 @@ public class Frequencer implements FrequencerInterface {
 
     // I know that here is a potential problem in the declaration.
     @Override
-    public int subByteFrequency(int start, int length) {
+    public int subByteFrequency(int start, int end) {
+	byte[] result = new byte[end - start];
+        for(int i = 0; i<end - start; i++) { result[i] = myTarget[start + i]; };
+
+	setTarget(result);
+        return frequency();
         // Not yet implemented, but it should be defined as specified.
-        return -1;
+        // return -1;
     }
 
     public static void main(String[] args) {
