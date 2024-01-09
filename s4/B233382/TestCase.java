@@ -56,6 +56,12 @@ public class TestCase {
 	    freq = myObject.frequency();
             assert freq == -1: "Target Length is 0 or target is null";
 
+	    // checking for when spaceLength is 0
+	    myObject.setSpace("".getBytes());
+            myObject.setTarget("Hi Ho Hi Ho".getBytes());
+	    freq = myObject.frequency();
+            assert freq == 0: "Target Length is 0 or target is null";
+
 
 	}
 	catch(Exception e) {
